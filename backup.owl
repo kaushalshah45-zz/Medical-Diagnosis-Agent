@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY medical "http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#"
+     xml:base="http://www.semanticweb.org/kaushal/ontologies/2014/10/medical"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:medical="http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kaushal/ontologies/2014/10/medical"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#alsoLeadsTo -->
+
+    <owl:ObjectProperty rdf:about="&medical;alsoLeadsTo">
+        <rdfs:range rdf:resource="&medical;Disorder"/>
+        <rdfs:range rdf:resource="&medical;High_Level_Symptom"/>
+        <rdfs:domain rdf:resource="&medical;High_Level_Symptom"/>
+        <rdfs:domain rdf:resource="&medical;Low_Level_Symptom"/>
+        <rdfs:range rdf:resource="&medical;Mid_Level_Symptom"/>
+        <rdfs:domain rdf:resource="&medical;Mid_Level_Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#leadsTo -->
+
+    <owl:ObjectProperty rdf:about="&medical;leadsTo">
+        <rdfs:domain rdf:resource="&medical;Disorder"/>
+        <rdfs:range rdf:resource="&medical;Disorder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#bloodPressure -->
+
+    <owl:DatatypeProperty rdf:about="&medical;bloodPressure">
+        <rdfs:domain rdf:resource="&medical;Low_Level_Symptom"/>
+        <rdfs:domain rdf:resource="&medical;Mid_Level_Symptom"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#bodyTemperature -->
+
+    <owl:DatatypeProperty rdf:about="&medical;bodyTemperature">
+        <rdfs:domain rdf:resource="&medical;Low_Level_Symptom"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#givenName -->
+
+    <owl:DatatypeProperty rdf:about="&medical;givenName">
+        <rdfs:domain rdf:resource="&medical;Disorder"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#name -->
+
+    <owl:DatatypeProperty rdf:about="&medical;name">
+        <rdfs:domain rdf:resource="&medical;Disorder"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Disorder -->
+
+    <owl:Class rdf:about="&medical;Disorder"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#High_Level_Symptom -->
+
+    <owl:Class rdf:about="&medical;High_Level_Symptom">
+        <rdfs:subClassOf rdf:resource="&medical;Disorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Level_Symptom -->
+
+    <owl:Class rdf:about="&medical;Low_Level_Symptom">
+        <rdfs:subClassOf rdf:resource="&medical;Mid_Level_Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Mid_Level_Symptom -->
+
+    <owl:Class rdf:about="&medical;Mid_Level_Symptom">
+        <rdfs:subClassOf rdf:resource="&medical;High_Level_Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Disorder_Cholera -->
+
+    <owl:NamedIndividual rdf:about="&medical;Disorder_Cholera">
+        <rdf:type rdf:resource="&medical;Disorder"/>
+        <name>cholera</name>
+        <givenName>Disorder_Cholera</givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Disorder_Heart_Fail -->
+
+    <owl:NamedIndividual rdf:about="&medical;Disorder_Heart_Fail">
+        <rdf:type rdf:resource="&medical;Disorder"/>
+        <givenName>Disorder_Heart_Fail</givenName>
+        <name>heart fail</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Disorder_Hepatitis -->
+
+    <owl:NamedIndividual rdf:about="&medical;Disorder_Hepatitis">
+        <rdf:type rdf:resource="&medical;Disorder"/>
+        <givenName>Disorder_Hepatitis</givenName>
+        <name>hepatitis</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Disorder_Jaundice -->
+
+    <owl:NamedIndividual rdf:about="&medical;Disorder_Jaundice">
+        <rdf:type rdf:resource="&medical;Disorder"/>
+        <name>jaundice</name>
+        <givenName>Disorder_Jaundice</givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Disorder_Malaria -->
+
+    <owl:NamedIndividual rdf:about="&medical;Disorder_Malaria">
+        <rdf:type rdf:resource="&medical;Disorder"/>
+        <name>malaria</name>
+        <givenName>Disorder_Malaria</givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Disorder_Tuberculosis -->
+
+    <owl:NamedIndividual rdf:about="&medical;Disorder_Tuberculosis">
+        <rdf:type rdf:resource="&medical;Disorder"/>
+        <givenName>Disorder_Tuberculosis</givenName>
+        <name>tuberculosis</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#High_Blue_Skin -->
+
+    <owl:NamedIndividual rdf:about="&medical;High_Blue_Skin">
+        <rdf:type rdf:resource="&medical;High_Level_Symptom"/>
+        <name>blue skin</name>
+        <givenName>High_Blue_Skin</givenName>
+        <alsoLeadsTo rdf:resource="&medical;Disorder_Malaria"/>
+        <leadsTo rdf:resource="&medical;Disorder_Tuberculosis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#High_Dizziness -->
+
+    <owl:NamedIndividual rdf:about="&medical;High_Dizziness">
+        <rdf:type rdf:resource="&medical;High_Level_Symptom"/>
+        <givenName>High_Dizziness</givenName>
+        <name>dizziness</name>
+        <leadsTo rdf:resource="&medical;Disorder_Hepatitis"/>
+        <alsoLeadsTo rdf:resource="&medical;Disorder_Jaundice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#High_Weight_Loss -->
+
+    <owl:NamedIndividual rdf:about="&medical;High_Weight_Loss">
+        <rdf:type rdf:resource="&medical;High_Level_Symptom"/>
+        <name>weight loss</name>
+        <givenName>High_Weight_Loss</givenName>
+        <leadsTo rdf:resource="&medical;Disorder_Cholera"/>
+        <alsoLeadsTo rdf:resource="&medical;Disorder_Heart_Fail"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Bleeding -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Bleeding">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <name>bleeding</name>
+        <givenName>Low_Bleeding</givenName>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Nausea"/>
+        <leadsTo rdf:resource="&medical;Mid_Sickness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Blood_Pressure -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Blood_Pressure">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <givenName>Low_Blood_Pressure</givenName>
+        <name>blood pressure</name>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Sickness"/>
+        <leadsTo rdf:resource="&medical;Mid_Vertigo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Blurry_Vision -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Blurry_Vision">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <givenName>Blurry_Vision</givenName>
+        <name>blurry vision</name>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Sickness"/>
+        <leadsTo rdf:resource="&medical;Mid_Vertigo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Chest_Pain -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Chest_Pain">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <name>chest pain</name>
+        <givenName>Low_Chest_Pain</givenName>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Nausea"/>
+        <leadsTo rdf:resource="&medical;Mid_Sickness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Cough -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Cough">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <givenName>Low_Cough</givenName>
+        <name>cough
+</name>
+        <leadsTo rdf:resource="&medical;Mid_Muscle_Pain"/>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Nausea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Fatigue -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Fatigue">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <givenName>Low_Fatigue</givenName>
+        <name>fatigue</name>
+        <leadsTo rdf:resource="&medical;Mid_Nausea"/>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Sickness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Fever -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Fever">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <bodyTemperature>98.6</bodyTemperature>
+        <name>fever</name>
+        <givenName>Low_Fever</givenName>
+        <leadsTo rdf:resource="&medical;Mid_Sickness"/>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Vertigo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Hiccups -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Hiccups">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <givenName>Low_Hiccups</givenName>
+        <name>hiccups</name>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Muscle_Pain"/>
+        <leadsTo rdf:resource="&medical;Mid_Sickness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Numbness -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Numbness">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <givenName>Low_Numbness</givenName>
+        <name>numbness</name>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Muscle_Pain"/>
+        <leadsTo rdf:resource="&medical;Mid_Sickness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Low_Yellow_Fever -->
+
+    <owl:NamedIndividual rdf:about="&medical;Low_Yellow_Fever">
+        <rdf:type rdf:resource="&medical;Low_Level_Symptom"/>
+        <bodyTemperature>108</bodyTemperature>
+        <name>yellow fever</name>
+        <givenName>Low_Yellow_Fever</givenName>
+        <leadsTo rdf:resource="&medical;Mid_Nausea"/>
+        <alsoLeadsTo rdf:resource="&medical;Mid_Nausea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Mid_Muscle_Pain -->
+
+    <owl:NamedIndividual rdf:about="&medical;Mid_Muscle_Pain">
+        <rdf:type rdf:resource="&medical;Mid_Level_Symptom"/>
+        <name>muscle pain</name>
+        <givenName>Mid_Muscle_Pain</givenName>
+        <leadsTo rdf:resource="&medical;High_Blue_Skin"/>
+        <alsoLeadsTo rdf:resource="&medical;High_Dizziness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Mid_Nausea -->
+
+    <owl:NamedIndividual rdf:about="&medical;Mid_Nausea">
+        <rdf:type rdf:resource="&medical;Mid_Level_Symptom"/>
+        <givenName>Mid_Nausea</givenName>
+        <name>nausea</name>
+        <leadsTo rdf:resource="&medical;High_Blue_Skin"/>
+        <alsoLeadsTo rdf:resource="&medical;High_Weight_Loss"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Mid_Sickness -->
+
+    <owl:NamedIndividual rdf:about="&medical;Mid_Sickness">
+        <rdf:type rdf:resource="&medical;Mid_Level_Symptom"/>
+        <givenName>Mid_Sickness</givenName>
+        <name>sickness</name>
+        <alsoLeadsTo rdf:resource="&medical;High_Blue_Skin"/>
+        <leadsTo rdf:resource="&medical;High_Dizziness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaushal/ontologies/2014/10/medical#Mid_Vertigo -->
+
+    <owl:NamedIndividual rdf:about="&medical;Mid_Vertigo">
+        <rdf:type rdf:resource="&medical;Mid_Level_Symptom"/>
+        <givenName>Mid_Vertigo</givenName>
+        <name>vertigo
+</name>
+        <bloodPressure>141</bloodPressure>
+        <leadsTo rdf:resource="&medical;High_Dizziness"/>
+        <alsoLeadsTo rdf:resource="&medical;High_Weight_Loss"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

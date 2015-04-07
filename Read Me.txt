@@ -1,0 +1,24 @@
+The folder src contains the source code for the project 
+
+Copy the folder to C drive
+
+Open command prompt and set path for java bin
+
+Then execute the following commands to compile the files.
+
+javac CreateGraph.java
+javac Edge.java
+javac Graph.java
+javac Heuristic.java
+javac Node.java
+javac OntologyConnect.java
+javac Search.java
+
+Then execute the command
+java Search
+
+
+The MEdical Diagnosis Agent Documentation contains the documentation for the project.
+
+backup.owl is the Knowledge base file.
+
